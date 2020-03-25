@@ -9,6 +9,7 @@ from hashlib import md5
 import base64
 from urllib.parse import urlencode, quote_plus, quote
 import requests
+import csv
 
 
 class Comm(object):
@@ -19,6 +20,16 @@ class Comm(object):
         self.sandbox = instance.sandbox
         self.url = instance.url
         return self
+
+    def _get_express_list(self):
+        """
+        获取支持的公司列表
+        """
+        express = {}
+        with open("kdn/data/express.csv") as f:
+            for row in csv.reader(f):
+                express[row[1].strip()] = row[0].strip()
+        return express
 
     def _get_request_header(self):
         """

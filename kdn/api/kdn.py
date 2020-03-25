@@ -3,7 +3,7 @@
 # @Author  : Kevin Kong (kfx2007@163.com)
 
 from .comm import Comm
-from .order import Query
+from .query import Query
 
 
 SANDBOXURL = "http://sandboxapi.kdniao.com:8080/kdniaosandbox/gateway/exterfaceInvoke.json"

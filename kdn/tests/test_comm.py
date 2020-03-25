@@ -26,6 +26,10 @@ class TestComm(unittest.TestCase):
         self.assertEqual(
             sign, "ZTc1MjdjN2Y1YmVlMjJmOWY4N2E0ZGI2YmZhNzIzZmI=", sign)
 
+    def test_read_list(self):
+        res = self.kdn.comm._get_express_list()
+        self.assertTrue(len(res))
+
 
 if __name__ == "__main__":
     unittest.main()
