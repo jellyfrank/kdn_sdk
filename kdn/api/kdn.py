@@ -4,6 +4,7 @@
 
 from .comm import Comm
 from .query import Query
+from .order import Order
 
 
 SANDBOXURL = "http://sandboxapi.kdniao.com:8080/kdniaosandbox/gateway/exterfaceInvoke.json"
@@ -26,3 +27,4 @@ class KDN(object):
 
     comm = Comm()
     query = Query()
+    order = Order()
