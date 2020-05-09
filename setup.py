@@ -44,6 +44,9 @@ setup(
     install_requires=[
         'requests',
     ],
+    package_data={
+        "":['kdn/data/express.csv']
+    },
     setup_requires=[
         'requests',
     ],
