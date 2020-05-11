@@ -16,6 +16,10 @@ python >= 3.6
 
 * 获取即时物流轨迹 get_express_routes
 * 接口订阅轨迹 subscribe_express_routes
+
+### 增值接口类 (Service)
+
+* 单号识别 recognize_logistic_code
   
 更多功能持续更新中...
 

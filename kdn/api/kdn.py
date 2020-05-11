@@ -5,6 +5,7 @@
 from .comm import Comm
 from .query import Query
 from .order import Order
+from .service import Service
 import csv
 import os
 
@@ -43,3 +44,4 @@ class KDN(object):
     comm = Comm()
     query = Query()
     order = Order()
+    service = Service()
