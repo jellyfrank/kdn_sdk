@@ -6,6 +6,12 @@
 
 from .comm import Comm
 
+STATES = [
+    (2, "在途中"),
+    (3, "已签收"),
+    (4, "问题件")
+]
+
 
 class Query(Comm):
 
@@ -123,7 +129,7 @@ class Query(Comm):
                 "ExpAreaName": district_name,
                 "Address": address,
             },
-            "Sender":{
+            "Sender": {
                 "Company": sender_company,
                 "Name": sender_name,
                 "Tel": sender_tel,
@@ -133,7 +139,7 @@ class Query(Comm):
                 "CityName": sender_city,
                 "ExpAreaName": sender_district,
                 "Address": sender_address,
-            },            
+            },
             "IsNotice": is_notice,
             "StartDate": start_date,
             "EndDate": end_date,
