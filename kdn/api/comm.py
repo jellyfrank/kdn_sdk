@@ -10,6 +10,7 @@ import base64
 from urllib.parse import urlencode, quote_plus, quote
 import requests
 import csv
+from copy import deepcopy
 
 
 class Comm(object):
@@ -40,13 +41,28 @@ class Comm(object):
             md5(to_sign).hexdigest().encode("utf-8")).decode("utf-8")
         return sign
 
+    def _remove_none(self, d):
+        dx = deepcopy(d)
+        for k, v in d.items():
+            if v and type(v) is dict:
+                r = self._remove_none(v)
+                if r:
+                    dx[k] = r
+                else:
+                    dx.pop(k)
+            if not v:
+                dx.pop(k)
+        return dx
+
     def post(self, request_type, data):
         """
         提交请求
         params:
         data: 提交的数据
         """
-        data = json.dumps({key: value for key, value in data.items() if value})
+        # data = json.dumps(
+        #     {key: value for key, value in data.items() if value is not None})
+        data = json.dumps(self._remove_none(data))
         request_data = {
             "RequestType": request_type,
             "EBusinessID": self.client_id,

@@ -20,6 +20,7 @@ class TestService(unittest.TestCase):
         测试单号识别
         """
         data = self.kdn.service.recognize_logistic_code("1234561")
+        print(data)
         self.assertTrue(data['Success'])
 
 

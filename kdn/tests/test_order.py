@@ -18,7 +18,14 @@ class TestOrder(unittest.TestCase):
         res = self.kdn.order.order("1234561", "ZTO", 1, "张三", "0755-0907283",
                                    "13709076789", "广东省", "深圳市", "深南大道2009号", "李四", "0755-1111111",
                                    "13932080778", "广东省", "深圳市", "福田保税区", "书本", "9999999", "深圳市福田区福田保税区")
-        print(res)
+        self.assertTrue(res['Success'], msg=res)
+
+    def test_eorder(self):
+        res = self.kdn.order.eorder(
+            "SF", "126546", 1, 1, "张三", "18512345678", "18512345678", "广东省", "深圳市", "福田区", "腾讯大厦", "希格格", "18511112222", "18522223333",
+            "北京市", "北京市", "朝阳区", "三里屯soho", 1, "TNT")
+        self.assertTrue(res['Success'], msg=res)
+
 
 if __name__ == "__main__":
     unittest.main()
