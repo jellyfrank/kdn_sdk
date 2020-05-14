@@ -21,13 +21,18 @@ class TestComm(unittest.TestCase):
         """
         data = {"OrderCode": "111", "ShipperCode": "SF",
                 "LogisticCode": "1234561", "IsHandleInfo": "0"}
-        data = json.dumps(data)
+        data = json.dumps(data, separators=(',', ':'), ensure_ascii=False)
         sign = self.kdn.comm._sign(data)
+
         self.assertEqual(
             sign, "ZTc1MjdjN2Y1YmVlMjJmOWY4N2E0ZGI2YmZhNzIzZmI=", sign)
 
     def test_read_list(self):
         res = self.kdn.get_express_list()
+        self.assertTrue(len(res))
+
+    def test_eorder_list(self):
+        res = self.kdn.get_eorder_express()
         self.assertTrue(len(res))
 
 

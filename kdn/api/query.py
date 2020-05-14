@@ -43,7 +43,7 @@ class Query(Comm):
                                  city_name, district_name, address, sender_name,  sender_province, sender_city,
                                  sender_district, sender_address, recevier_tel=None, receiver_mobile=None, sender_tel=None, sender_mobile=None, callback=None,
                                  member_id=None, warehouse_id=None, customer_name=None, order_code=None, month_code=None,
-                                 pay_type=1, exp_type=None, cost=None, other_cost=None, receiver_company=None,
+                                 pay_type=1, exp_type=1, cost=None, other_cost=None, receiver_company=None,
                                  receiver_post_code=None, sender_company=None, sender_post_code=None, is_notice=1, start_date=None,
                                  end_date=None, weight=None, quantity=None, volume=None, remark=None, is_sender_message=None,
                                  service_name=None, service_value=None, service_customer_id=None, goods_name=None,

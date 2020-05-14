@@ -41,6 +41,21 @@ class KDN(object):
                 express[row[1].strip()] = row[0].strip()
         return express
 
+    @classmethod
+    def get_eorder_express(cls):
+        """
+        获取支持电子面单的物流公司
+        """
+        codes = []
+        filelist = ('direct.csv', 'eorder.csv',
+                    'kdn.csv', 'month.csv', 'offline.csv')
+        csv_path = os.path.dirname(os.path.dirname(__file__))
+        for file in filelist:
+            with open(os.path.join(csv_path, f"data/{file}")) as f:
+                for row in csv.reader(f):
+                    codes.append(row[0])
+        return set(list(codes))
+
     comm = Comm()
     query = Query()
     order = Order()
