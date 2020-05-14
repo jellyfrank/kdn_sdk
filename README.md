@@ -11,6 +11,8 @@ python >= 3.6
 ### 下单类(Order)
 
 * 上门取件 order
+* 预约取件 preorder
+* 电子面单 eorder
 
 ### 查询类（Query)
 

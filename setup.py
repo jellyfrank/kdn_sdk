@@ -45,7 +45,14 @@ setup(
         'requests',
     ],
     package_data={
-        "":['kdn/data/express.csv']
+        "":[
+            'kdn/data/express.csv',
+            'kdn/data/direct.csv',
+            'kdn/data/kdn.csv',
+            'kdn/data/month.csv',
+            'kdn/data/offline.csv',
+            'kdn/data/eorder.csv',
+        ]
     },
     setup_requires=[
         'requests',

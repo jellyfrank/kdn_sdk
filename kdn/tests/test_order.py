@@ -27,6 +27,12 @@ class TestOrder(unittest.TestCase):
             "北京市", "北京市", "朝阳区", "三里屯soho", 1, "TNT")
         self.assertTrue(res['Success'], msg=res)
 
+    def test_eorder_error(self):
+        res = self.kdn.order.eorder(
+            "CG", "126546", 1, 1, "张三", "18512345678", "18512345678", "广东省", "深圳市", "福田区", "腾讯大厦", "希格格", "18511112222", "18522223333",
+            "北京市", "北京市", "朝阳区", "三里屯soho", 1, "TNT")
+        self.assertFalse(res['Success'], msg=res)
+
     def test_preoder(self):
         res = self.kdn.order.preorder("1234561", "ZTO", 1, "张三", "0755-0907283",
                                       "13709076789", "广东省", "深圳市", "深南大道2009号", "李四", "0755-1111111",
