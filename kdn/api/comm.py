@@ -35,7 +35,7 @@ class Comm(object):
         """
         签名逻辑
         """
-        to_sign = f"{''.join(str(data).split())}{self.api_key}".encode(
+        to_sign = f"{data}{self.api_key}".encode(
             "utf-8")
         sign = base64.b64encode(
             md5(to_sign).hexdigest().encode("utf-8")).decode("utf-8")
@@ -49,9 +49,12 @@ class Comm(object):
                 if r:
                     dx[k] = r
                 else:
-                    dx.pop(k)
+                    dx[k] = ''
+            if v and type(v) is list:
+                for i in range(len(v)):
+                    dx[k][i] = self._remove_none(v[i])
             if not v:
-                dx.pop(k)
+                dx[k] = ''
         return dx
 
     def post(self, request_type, data):
@@ -60,13 +63,11 @@ class Comm(object):
         params:
         data: 提交的数据
         """
-        # data = json.dumps(
-        #     {key: value for key, value in data.items() if value is not None})
-        data = json.dumps(self._remove_none(data))
+        data = json.dumps(self._remove_none(data), separators=(',', ':'),ensure_ascii=False)
         request_data = {
             "RequestType": request_type,
             "EBusinessID": self.client_id,
-            "RequestData": quote(''.join(str(data).split())),
+            "RequestData": quote_plus(data),
             "DataSign": self._sign(data),
             "DataType": 2
         }
