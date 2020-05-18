@@ -1,4 +1,4 @@
-name: KDN SDK
+name: BUILD KDN SDK
 
 on: [push]
 
