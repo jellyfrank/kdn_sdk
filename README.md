@@ -1,4 +1,4 @@
-[![Actions Status](https://github.com/block-cat/kdn_sdk/workflows/pythonpackage/badge.svg)](https://github.com/block-cat/kdn_sdk/actions)
+[![Actions Status](https://github.com/block-cat/kdn_sdk/workflows/KDN%20SDK/badge.svg)](https://github.com/block-cat/kdn_sdk/actions)
 
 # 快递鸟 Python SDK
 

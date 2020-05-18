@@ -1,4 +1,4 @@
-name: Python package
+name: KDN SDK
 
 on: [push]
 
