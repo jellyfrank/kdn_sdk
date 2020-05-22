@@ -20,7 +20,14 @@ class TestService(unittest.TestCase):
         测试单号识别
         """
         data = self.kdn.service.recognize_logistic_code("1234561")
-        print(data)
+        self.assertTrue(data['Success'])
+
+    def test_safe_phone(self):
+        """
+        测试隐私API
+        """
+        data = self.kdn.service.safe_phone("1111", "SF", "11111", "占三", "18512341234", "18511112222",
+                                           "北京市", "北京市", "中关村", "里斯", "1851113232", "15911110000", "山东省", '青岛市', "市北区", 1)
         self.assertTrue(data['Success'])
 
 
