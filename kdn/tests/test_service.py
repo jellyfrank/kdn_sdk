@@ -30,6 +30,15 @@ class TestService(unittest.TestCase):
                                            "北京市", "北京市", "中关村", "里斯", "1851113232", "15911110000", "山东省", '青岛市', "市北区", 1)
         self.assertTrue(data['Success'])
 
+    def test_private_eorder(self):
+        """
+        隐私电子面单
+        """
+        data = self.kdn.service.private_eorder("SF", "11111", "1", "张三", "18512341234", "18512341234", "北京市", "北京市", "海淀区1号",
+                                               "李四", "18511223344", "18612345678", "山东省", "青岛市", "李沧区", service_value=1.22, service_name="TEST", commodity_goods_name="TTT")
+
+        self.assertTrue(data["Success"])
+
 
 if __name__ == "__main__":
     unittest.main()
