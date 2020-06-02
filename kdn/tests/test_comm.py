@@ -35,6 +35,10 @@ class TestComm(unittest.TestCase):
         res = self.kdn.get_eorder_express()
         self.assertTrue(len(res))
 
+    def test_templates(self):
+        res = self.kdn.get_templates()
+        print(res)
+
 
 if __name__ == "__main__":
     unittest.main()

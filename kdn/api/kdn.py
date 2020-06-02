@@ -56,6 +56,18 @@ class KDN(object):
                     codes.append(row[0])
         return set(list(codes))
 
+    @classmethod
+    def get_templates(cls):
+        """
+        获取电子面单模板
+        """
+        templates = []
+        csv_path = os.path.dirname(os.path.dirname(__file__))
+        with open(os.path.join(csv_path, "data/templates.csv")) as f:
+            for row in csv.reader(f):
+                templates.append(tuple(row))
+        return templates
+
     comm = Comm()
     query = Query()
     order = Order()
