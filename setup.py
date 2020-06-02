@@ -51,7 +51,8 @@ setup(
             'kdn/data/kdn.csv',
             'kdn/data/month.csv',
             'kdn/data/offline.csv',
-            'kdn/data/eorder.csv'
+            'kdn/data/eorder.csv',
+            'kdn/data/templates.csv'
         ]
     },
     setup_requires=[
