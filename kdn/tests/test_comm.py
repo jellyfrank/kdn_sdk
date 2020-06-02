@@ -37,7 +37,7 @@ class TestComm(unittest.TestCase):
 
     def test_templates(self):
         res = self.kdn.get_templates()
-        print(res)
+        self.assertTrue(len(res))
 
 
 if __name__ == "__main__":
