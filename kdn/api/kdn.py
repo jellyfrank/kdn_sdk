@@ -6,6 +6,7 @@ from .comm import Comm
 from .query import Query
 from .order import Order
 from .service import Service
+from .onroad import Onroad
 import csv
 import os
 
@@ -72,3 +73,4 @@ class KDN(object):
     query = Query()
     order = Order()
     service = Service()
+    onroad = Onroad()

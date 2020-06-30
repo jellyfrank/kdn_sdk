@@ -24,6 +24,10 @@ python >= 3.6
 ### 增值接口类 (Service)
 
 * 单号识别 recognize_logistic_code
+
+### 在途监控(Onroad)
+
+* 即时查询
   
 更多功能持续更新中...
 
