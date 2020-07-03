@@ -39,6 +39,12 @@ class TestComm(unittest.TestCase):
         res = self.kdn.get_templates()
         self.assertTrue(len(res))
 
+    def test_exp_types(self):
+        res = self.kdn.get_express_types()
+        print('-------')
+        print(res)
+        # self.assertTrue()
+
 
 if __name__ == "__main__":
     unittest.main()

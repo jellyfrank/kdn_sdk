@@ -69,6 +69,16 @@ class KDN(object):
                 templates.append(tuple(row))
         return templates
 
+    @classmethod
+    def get_express_types(self):
+        """获取快递公司业务类型"""
+        types = []
+        csv_path = os.path.dirname(os.path.dirname(__file__))
+        with open(os.path.join(csv_path, "data/exptype.csv")) as f:
+            for row in csv.reader(f):
+                types.append(tuple(row))
+        return types
+
     comm = Comm()
     query = Query()
     order = Order()
