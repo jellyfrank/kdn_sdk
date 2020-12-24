@@ -12,7 +12,6 @@ import requests
 import csv
 from copy import deepcopy
 
-
 class Comm(object):
 
     def __get__(self, instance, owner):

@@ -53,7 +53,8 @@ setup(
             'kdn/data/offline.csv',
             'kdn/data/eorder.csv',
             'kdn/data/templates.csv',
-            'kdn/data/exptypes.csv'
+            'kdn/data/exptypes.csv',
+            'kdn/data/preorder.csv'
         ]
     },
     setup_requires=[
