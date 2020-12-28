@@ -79,6 +79,16 @@ class KDN(object):
                 types.append(tuple(row))
         return types
 
+    @classmethod
+    def get_preorder_express(self):
+        """get express list which supported preordering"""
+        expresses =[]
+        csv_path = os.path.dirname(os.path.dirname(__file__))
+        with open(os.path.join(csv_path, "data/preorder.csv")) as f:
+            for row in csv.reader(f):
+                expresses.append(row[0])
+        return expresses
+
     comm = Comm()
     query = Query()
     order = Order()
