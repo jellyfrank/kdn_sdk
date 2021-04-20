@@ -4,4 +4,4 @@
 
 
 __author__ = "Kevin Kong"
-__version__ = "0.2.0"
+__version__ = "0.2.1"
