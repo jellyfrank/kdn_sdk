@@ -48,14 +48,14 @@ class Query(Comm):
 
         return self.post(request_type, data)
 
-    def subscribe_express_routes(self, shipper_code, logistic_code, recevier_name, province_name,
+    def subscribe_express_routes(self, callback, shipper_code, logistic_code, recevier_name, province_name,
                                  city_name, district_name, address, sender_name,  sender_province, sender_city,
-                                 sender_district, sender_address, recevier_tel=None, receiver_mobile=None, sender_tel=None, sender_mobile=None, callback=None,
+                                 sender_district, sender_address, recevier_tel=None, receiver_mobile=None, sender_tel=None, sender_mobile=None,
                                  member_id=None, warehouse_id=None, customer_name=None, order_code=None, month_code=None,
                                  pay_type=1, exp_type=1, cost=None, other_cost=None, receiver_company=None,
                                  receiver_post_code=None, sender_company=None, sender_post_code=None, is_notice=1, start_date=None,
                                  end_date=None, weight=None, quantity=None, volume=None, remark=None, is_sender_message=None,
-                                 service_name=None, service_value=None, service_customer_id=None, goods_name=None,
+                                 service_name=None, service_value=None, service_customer_id=None, goods_name=None, sort=0,
                                  goods_code=None, goods_quantity=None, goods_price=None, goods_weight=None, goods_desc=None,
                                  goods_vol=None):
         """

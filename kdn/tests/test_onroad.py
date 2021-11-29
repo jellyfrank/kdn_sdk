@@ -5,7 +5,6 @@
 import unittest
 from kdn.api.kdn import KDN
 
-
 class TestOnroad(unittest.TestCase):
 
     @classmethod
@@ -16,8 +15,8 @@ class TestOnroad(unittest.TestCase):
 
     def test_get_express_routes(self):
         #[HACK] 快递鸟沙箱环境不支持 在途监控
-        res = self.kdn.onroad.get_express_routes("1234561", "SF", "111")
-        self.assertFalse(res["Success"])
+        res = self.kdn.logistic.get_express_routes("1234561", "SF", "111")
+        self.assertTrue(res["Success"],res)
 
 
 if __name__ == "__main__":

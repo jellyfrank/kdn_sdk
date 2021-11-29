@@ -37,7 +37,7 @@ class TestOrder(unittest.TestCase):
         res = self.kdn.order.preorder("1234561", "ZTO", 1, "张三", "0755-0907283",
                                       "13709076789", "广东省", "深圳市", "深南大道2009号", "李四", "0755-1111111",
                                       "13932080778", "广东省", "深圳市", "福田保税区", "书本", "9999999", "深圳市福田区福田保税区",
-                                      start_date="2020-06-15 12:00:00", receiver_district="福田区", sender_district="福田区",service_value=1000, service_name="INSURE")
+                                      start_date="2090-06-15 12:00:00", receiver_district="福田区", sender_district="福田区",service_value=1000, service_name="INSURE",service_customer_id="1111112222")
         self.assertTrue(res['Success'], msg=res)
 
 

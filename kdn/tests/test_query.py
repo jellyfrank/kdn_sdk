@@ -20,7 +20,7 @@ class TestQuery(unittest.TestCase):
         self.assertTrue(res["Success"], res)
 
     def test_subscribe_route(self):
-        res = self.kdn.query.subscribe_express_routes(
+        res = self.kdn.query.subscribe_express_routes("http://www.test.com/api",
             "ZTO", "1234561", "测试", "广东省", "深圳市",
             "福田区", "腾讯大厦", "赵敏", "北京市", "北京市",
             "朝阳区", "三里屯SOHO", "18512345678", None, "18511112222", None)
