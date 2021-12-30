@@ -24,6 +24,10 @@ PAY_TYPES = [
 
 class Query(Comm):
 
+    def __init__(self,*args,**kwargs):
+        self.express_code = 1002
+        self.subsribe_code = 1008
+
     def get_express_routes(self, shipper_code, logistic_code, order_code=None, customer_name=None):
         """
         获取即时物流轨迹
@@ -33,8 +37,6 @@ class Query(Comm):
         order_code: 订单编号
         customer_name: ShipperCode 为 JD，必填，对应京东的青龙配送编码，也叫商家编码.
         """
-
-        request_type = 1002
 
         if not self.sandbox:
             self.url = f"{self.url}/Ebusiness/EbusinessOrderHandle.aspx"
@@ -46,7 +48,7 @@ class Query(Comm):
             "CustomerName": customer_name,
         }
 
-        return self.post(request_type, data)
+        return self.post(self.express_code, data)
 
     def subscribe_express_routes(self, callback, shipper_code, logistic_code, recevier_name, province_name,
                                  city_name, district_name, address, sender_name,  sender_province, sender_city,
@@ -110,9 +112,8 @@ class Query(Comm):
         goods_vol: 商品体积
         """
 
-        request_type = 1008
         if not self.sandbox:
-            self.url = "/api/dist"
+            self.url = f"{self.url}/api/dist"
 
         data = {
             "Callback": callback,
@@ -169,4 +170,4 @@ class Query(Comm):
             "Commodity.GoodsVol": goods_vol
         }
 
-        return self.post(request_type, data)
+        return self.post(self.subsribe_code, data)

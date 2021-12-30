@@ -11,6 +11,10 @@ from urllib.parse import urlencode, quote_plus, quote
 import requests
 import csv
 from copy import deepcopy
+import logging
+
+_logger = logging.getLogger(__name__)
+
 
 class Comm(object):
 
@@ -62,7 +66,8 @@ class Comm(object):
         params:
         data: 提交的数据
         """
-        data = json.dumps(self._remove_none(data), separators=(',', ':'),ensure_ascii=False)
+        data = json.dumps(self._remove_none(
+            data), separators=(',', ':'), ensure_ascii=False)
         request_data = {
             "RequestType": request_type,
             "EBusinessID": self.client_id,
@@ -70,4 +75,5 @@ class Comm(object):
             "DataSign": self._sign(data),
             "DataType": 2
         }
+        _logger.debug(f"KDN-SDK POST:{request_data}")
         return requests.post(self.url, data=request_data).json()
