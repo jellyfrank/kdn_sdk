@@ -89,6 +89,17 @@ class KDN(object):
                 expresses.append(row[0])
         return expresses
 
+    
+    @classmethod
+    def get_trans_types(self):
+        """get express trans types"""
+        transtypes =[]
+        csv_path = os.path.dirname(os.path.dirname(__file__))
+        with open(os.path.join(csv_path, "data/trans.csv")) as f:
+            for row in csv.reader(f):
+                transtypes.append(row)
+        return transtypes
+
     comm = Comm()
     query = Query()
     order = Order()
