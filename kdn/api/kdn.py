@@ -37,7 +37,7 @@ class KDN(object):
         """
         express = {}
         csv_path = os.path.dirname(os.path.dirname(__file__))
-        with open(os.path.join(csv_path, "data/express.csv")) as f:
+        with open(os.path.join(csv_path, "data/express.csv"),encoding='UTF-8') as f:
             for row in csv.reader(f):
                 express[row[1].strip()] = row[0].strip()
         return express
@@ -52,7 +52,7 @@ class KDN(object):
                     'kdn.csv', 'month.csv', 'offline.csv')
         csv_path = os.path.dirname(os.path.dirname(__file__))
         for file in filelist:
-            with open(os.path.join(csv_path, f"data/{file}")) as f:
+            with open(os.path.join(csv_path, f"data/{file}"),encoding='UTF-8') as f:
                 for row in csv.reader(f):
                     codes.append(row[0])
         return set(list(codes))
@@ -64,7 +64,7 @@ class KDN(object):
         """
         templates = []
         csv_path = os.path.dirname(os.path.dirname(__file__))
-        with open(os.path.join(csv_path, "data/templates.csv")) as f:
+        with open(os.path.join(csv_path, "data/templates.csv"),encoding='UTF-8') as f:
             for row in csv.reader(f):
                 templates.append(tuple(row))
         return templates
@@ -74,7 +74,7 @@ class KDN(object):
         """获取快递公司业务类型"""
         types = []
         csv_path = os.path.dirname(os.path.dirname(__file__))
-        with open(os.path.join(csv_path, "data/exptype.csv")) as f:
+        with open(os.path.join(csv_path, "data/exptype.csv"),encoding='UTF-8') as f:
             for row in csv.reader(f):
                 types.append(tuple(row))
         return types
@@ -84,7 +84,7 @@ class KDN(object):
         """get express list which supported preordering"""
         expresses =[]
         csv_path = os.path.dirname(os.path.dirname(__file__))
-        with open(os.path.join(csv_path, "data/preorder.csv")) as f:
+        with open(os.path.join(csv_path, "data/preorder.csv"),encoding='UTF-8') as f:
             for row in csv.reader(f):
                 expresses.append(row[0])
         return expresses
@@ -95,7 +95,7 @@ class KDN(object):
         """get express trans types"""
         transtypes =[]
         csv_path = os.path.dirname(os.path.dirname(__file__))
-        with open(os.path.join(csv_path, "data/trans.csv")) as f:
+        with open(os.path.join(csv_path, "data/trans.csv"),encoding='UTF-8') as f:
             for row in csv.reader(f):
                 transtypes.append(row)
         return transtypes
